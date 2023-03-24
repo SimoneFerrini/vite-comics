@@ -52,7 +52,7 @@ export default {
         ul{
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: space-around;
 
             li{
                 display: flex;
