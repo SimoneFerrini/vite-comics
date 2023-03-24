@@ -13,7 +13,15 @@ export default {
             "Fans",
             "News",
             "Shop"
-        ]
+        ],
+
+        activeIndex: 0,
+    }
+  },
+
+  methods:{
+    setIndex(index){
+        this.activeIndex = index;
     }
   }
 }
@@ -27,7 +35,7 @@ export default {
                 <img src="/img/dc-logo.png" alt="img">
             </div>
             <ul>
-                <li v-for="link in linksHeader">{{ link }} </li>
+                <li v-for="(link,index) in linksHeader" @click="setIndex(index)" :class="activeIndex == index ? 'active' : ' ' ">{{ link }} </li>
                 
             </ul>
         </div>
@@ -47,6 +55,7 @@ export default {
         
         max-width: 70%;
         margin: 0 auto;
+        height: 100px;
 
             .logo{
                 width: 70px;
@@ -63,19 +72,33 @@ export default {
             display: flex;
             flex-direction: row;
             
+            
             color: black;
             font-size: 0.8em;
+            height: 100%;
 
             li{
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 height: 100%;
                 padding: 0.8em;
                 text-transform: uppercase;
                 font-weight: 600 ;
+                border-bottom: 4px solid transparent;
+                
+                &.active{
+                    color: dodgerblue;
+                    border-bottom: 4px solid dodgerblue;
+                }
             }
+
             
         }
-    }
+    };
+    
 
+    
   
 
 </style>
