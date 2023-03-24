@@ -29,7 +29,7 @@ export default {
 
 <template>
     <div class="header">
-        <div class="header-container">
+        <div class="header-container my-container">
             
             <div class="logo">
                 <img src="/img/dc-logo.png" alt="img">
@@ -53,9 +53,6 @@ export default {
         justify-content: space-between;
         align-items: center;
         
-        max-width: 70%;
-        margin: 0 auto;
-        height: 100px;
 
             .logo{
                 width: 70px;
