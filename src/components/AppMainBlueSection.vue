@@ -47,7 +47,7 @@ export default {
 <style lang="scss" scoped>
     .bg-blue{
         background-color: dodgerblue;
-        color: white;
+        color: white; 
 
         ul{
             display: flex;
