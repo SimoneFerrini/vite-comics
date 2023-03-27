@@ -4,7 +4,9 @@ import MainCard from "./MainCard.vue";
 
 export default {
   data(){
-    comicsCards: [
+       
+    return{
+      comicsCards: [
   {
     "thumb": "https://www.coverbrowser.com/image/action-comics/1-1.jpg",
     "price": "$19.99",
@@ -78,11 +80,10 @@ export default {
     "type": "graphic novel"
   }
 ]
-    
-    return{
 
     }
   },
+
   components:{
     AppMainBlueSection,
     MainCard,
@@ -96,14 +97,9 @@ export default {
         <div class="my-container">
           <div id="current-series"> Current Series</div>
           <div id="cards-container">
-            <MainCard></MainCard>
-            <MainCard></MainCard>
-            <MainCard></MainCard>
-            <MainCard></MainCard>
-            <MainCard></MainCard>
-            <MainCard></MainCard>
-            <MainCard></MainCard>
-            <MainCard></MainCard>
+            <MainCard v-for="card in comicsCards" :cardTitle="card.series" :cardImg="card.thumb"></MainCard>
+           
+    
           </div>
           <div>
             <button>Load More</button>
@@ -155,7 +151,7 @@ export default {
             #cards-container{
               display: flex;
               flex-flow: row wrap;
-              justify-content: center;
+              justify-content: flex-start;
               gap: 5px;
 
               padding: 2em 0;
@@ -171,6 +167,7 @@ export default {
               text-transform: uppercase;
               border: 1px solid white;
               font-weight: bold;
+              margin-bottom: 1em;
             }
           }
         }

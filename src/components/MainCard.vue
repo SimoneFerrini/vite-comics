@@ -4,7 +4,14 @@
             return{
 
             }
+        },
+
+        
+        props: {
+            cardTitle: String,
+            cardImg: String,
         }
+        
     }
 </script>
 
@@ -12,9 +19,9 @@
 <template>
     <div class="card">
         <div class="card-img">
-            <img src="https://static.wikia.nocookie.net/marvel_dc/images/c/cf/Batman_Superman_Annual_Vol_2_1.jpg" alt="img">
+            <img :src="cardImg" alt="img">
         </div>
-        <div class="card-title">title</div>
+        <div class="card-title"> {{ cardTitle }}</div>
     </div>
 </template>
 
@@ -22,9 +29,13 @@
     .card{
         display: flex;
         flex-direction: column;
-        gap: 3px;
+        gap: 10px;
+
+        margin-bottom: 0.5em;
+
+        width: calc(100% / 6 - 10px);
         .card-img{
-            width: 120px;
+            width: 100%;
             height: 120px;
 
             overflow: hidden;
@@ -33,6 +44,11 @@
                 width: 100%;
             
             }
+        }
+
+        .card-title{
+            height: 3.5em;
+            width:90%;
         }
 
     }
