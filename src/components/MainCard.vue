@@ -23,8 +23,18 @@
         display: flex;
         flex-direction: column;
         gap: 3px;
+        .card-img{
+            width: 120px;
+            height: 120px;
 
-        width: calc(100% / 6 - 5 * 10px);
+            overflow: hidden;
+
+            img{
+                width: 100%;
+            
+            }
+        }
+
     }
 
 

@@ -92,7 +92,7 @@ export default {
 
 <template>
     <div class="bg-black">
-      <div id="main-img-bg"> ciao</div>
+      <div id="main-img-bg"></div>
         <div class="my-container">
           <div id="current-series"> Current Series</div>
           <div id="cards-container">
@@ -139,6 +139,7 @@ export default {
 
             position: relative;
             padding: 1em 0;
+            height: auto;
 
 
             #current-series{
@@ -154,6 +155,13 @@ export default {
             #cards-container{
               display: flex;
               flex-flow: row wrap;
+              justify-content: center;
+              gap: 5px;
+
+              padding: 2em 0;
+
+              width: 100%;
+
               
             }
 
